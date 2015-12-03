@@ -76,7 +76,10 @@ class NTLMSoapClient extends SoapClient
      */
     public function __call($name, $args)
     {
-        if (($name == "DeleteItem" || $name == "SyncFolderItems") && isset($this->__default_headers[1])) {
+        if (($name == "DeleteItem" || $name == "SyncFolderItems")
+            && isset($this->__default_headers[1])
+            && $this->__default_headers[1]->name !== "ExchangeImpersonation"
+        ) {
             $header = $this->__default_headers[1];
             unset($this->__default_headers[1]);
 
