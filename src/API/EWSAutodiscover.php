@@ -2,6 +2,7 @@
 namespace jamesiarmes\PEWS\API;
 
 use XMLWriter;
+use jamesiarmes\PEWS\API\Enumeration\ExchangeVersionType;
 
 /**
  * Contains EWSAutodiscover.
@@ -313,26 +314,35 @@ class EWSAutodiscover
         if ($majorversion == 8) {
             switch ($minorversion) {
                 case 0:
-                    return ExchangeWebServices::VERSION_2007;
+                    return ExchangeVersionType::VERSION_2007;
                 case 1:
-                    return ExchangeWebServices::VERSION_2007_SP1;
+                    return ExchangeVersionType::VERSION_2007_SP1;
                 case 2:
-                    return ExchangeWebServices::VERSION_2007_SP2;
+                    return ExchangeVersionType::VERSION_2007_SP2;
                 case 3:
-                    return ExchangeWebServices::VERSION_2007_SP3;
+                    return ExchangeVersionType::VERSION_2007_SP3;
                 default:
-                    return ExchangeWebServices::VERSION_2007;
+                    return ExchangeVersionType::VERSION_2007;
             }
         } elseif ($majorversion == 14) {
             switch ($minorversion) {
                 case 0:
-                    return ExchangeWebServices::VERSION_2010;
+                    return ExchangeVersionType::VERSION_2010;
                 case 1:
-                    return ExchangeWebServices::VERSION_2010_SP1;
+                    return ExchangeVersionType::VERSION_2010_SP1;
                 case 2:
-                    return ExchangeWebServices::VERSION_2010_SP2;
+                    return ExchangeVersionType::VERSION_2010_SP2;
                 default:
-                    return ExchangeWebServices::VERSION_2010;
+                    return ExchangeVersionType::VERSION_2010;
+            }
+        } elseif ($majorversion == 15) {
+            switch ($minorversion) {
+                case 0:
+                    return ExchangeVersionType::VERSION_2013;
+                case 1:
+                    return ExchangeVersionType::VERSION_2013_SP1;
+                default:
+                    return ExchangeVersionType::VERSION_2013;
             }
         }
 
