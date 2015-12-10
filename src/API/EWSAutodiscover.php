@@ -314,35 +314,35 @@ class EWSAutodiscover
         if ($majorversion == 8) {
             switch ($minorversion) {
                 case 0:
-                    return ExchangeVersionType::VERSION_2007;
+                    return ExchangeVersionType::EXCHANGE_2007;
                 case 1:
-                    return ExchangeVersionType::VERSION_2007_SP1;
+                    return ExchangeVersionType::EXCHANGE_2007_SP1;
                 case 2:
-                    return ExchangeVersionType::VERSION_2007_SP2;
+                    return ExchangeVersionType::EXCHANGE_2007_SP2;
                 case 3:
-                    return ExchangeVersionType::VERSION_2007_SP3;
+                    return ExchangeVersionType::EXCHANGE_2007_SP3;
                 default:
-                    return ExchangeVersionType::VERSION_2007;
+                    return ExchangeVersionType::EXCHANGE_2007;
             }
         } elseif ($majorversion == 14) {
             switch ($minorversion) {
                 case 0:
-                    return ExchangeVersionType::VERSION_2010;
+                    return ExchangeVersionType::EXCHANGE_2010;
                 case 1:
-                    return ExchangeVersionType::VERSION_2010_SP1;
+                    return ExchangeVersionType::EXCHANGE_2010_SP1;
                 case 2:
-                    return ExchangeVersionType::VERSION_2010_SP2;
+                    return ExchangeVersionType::EXCHANGE_2010_SP2;
                 default:
-                    return ExchangeVersionType::VERSION_2010;
+                    return ExchangeVersionType::EXCHANGE_2010;
             }
         } elseif ($majorversion == 15) {
             switch ($minorversion) {
                 case 0:
-                    return ExchangeVersionType::VERSION_2013;
+                    return ExchangeVersionType::EXCHANGE_2013;
                 case 1:
-                    return ExchangeVersionType::VERSION_2013_SP1;
+                    return ExchangeVersionType::EXCHANGE_2013_SP1;
                 default:
-                    return ExchangeVersionType::VERSION_2013;
+                    return ExchangeVersionType::EXCHANGE_2013;
             }
         }
 
