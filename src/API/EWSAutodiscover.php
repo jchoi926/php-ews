@@ -2,6 +2,7 @@
 namespace jamesiarmes\PEWS\API;
 
 use XMLWriter;
+use jamesiarmes\PEWS\API\Enumeration\ExchangeVersionType;
 
 /**
  * Contains EWSAutodiscover.
@@ -333,6 +334,15 @@ class EWSAutodiscover
                     return ExchangeWebServices::VERSION_2010_SP2;
                 default:
                     return ExchangeWebServices::VERSION_2010;
+            }
+        } elseif ($majorversion == 15) {
+            switch ($minorversion) {
+                case 0:
+                    return ExchangeVersionType::VERSION_2013;
+                case 1:
+                    return ExchangeVersionType::VERSION_2013_SP1;
+                default:
+                    return ExchangeWebServices::VERSION_2013;
             }
         }
 
