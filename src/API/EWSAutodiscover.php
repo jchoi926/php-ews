@@ -331,6 +331,7 @@ class EWSAutodiscover
                 case 1:
                     return ExchangeVersionType::EXCHANGE_2010_SP1;
                 case 2:
+                case 3:
                     return ExchangeVersionType::EXCHANGE_2010_SP2;
                 default:
                     return ExchangeVersionType::EXCHANGE_2010;
