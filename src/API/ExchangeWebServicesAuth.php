@@ -23,7 +23,7 @@ class ExchangeWebServicesAuth
           $auth['curl'][CURLOPT_PROXYPORT] = $proxy['proxy_port'];
           $auth['curl'][CURLOPT_PROXYUSERPWD] = $proxy['proxy_user'] . ':' . $proxy['proxy_pass'];
         }
-
+        return $auth;
     }
 
     public static function fromCallbackToken($token)
