@@ -175,21 +175,22 @@ class ExchangeWebServices
         $server = null,
         $username = null,
         $password = null,
-        $options = []
+        $options = [],
+        array $proxy = null
     ) {
         if ($server !== null) {
             $this->createClient(
                 $server,
-                ExchangeWebServicesAuth::fromUsernameAndPassword($username, $password),
+                ExchangeWebServicesAuth::fromUsernameAndPassword($username, $password, $proxy),
                 $options
             );
         }
     }
 
-    public static function fromUsernameAndPassword($server, $username, $password, $options)
+    public static function fromUsernameAndPassword($server, $username, $password, $options, array $proxy = null)
     {
         $self = new static();
-        $self->createClient($server, ExchangeWebServicesAuth::fromUsernameAndPassword($username, $password), $options);
+        $self->createClient($server, ExchangeWebServicesAuth::fromUsernameAndPassword($username, $password, $proxy), $options);
 
         return $self;
     }
