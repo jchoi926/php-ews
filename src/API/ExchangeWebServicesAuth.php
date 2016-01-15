@@ -21,7 +21,7 @@ class ExchangeWebServicesAuth
           $auth['curl'][CURLOPT_PROXYTYPE] = CURLPROXY_HTTP;
           $auth['curl'][CURLOPT_PROXY] = $proxy['proxy_host'];
           $auth['curl'][CURLOPT_PROXYPORT] = $proxy['proxy_port'];
-          $auth['curl'][CURLOPT_PROXYUSERPWD] = $proxy['username'] . ':' . $proxy['password'];
+          $auth['curl'][CURLOPT_PROXYUSERPWD] = $proxy['proxy_user'] . ':' . $proxy['proxy_pass'];
         }
 
     }
