@@ -6,14 +6,24 @@ use GuzzleHttp\Client;
 
 class ExchangeWebServicesAuth
 {
-    public static function fromUsernameAndPassword($username, $password)
+    public static function fromUsernameAndPassword($username, $password, array $proxy = null)
     {
-        return array(
+        $auth = array(
             'curl' => array(
                 CURLOPT_HTTPAUTH => CURLAUTH_BASIC | CURLAUTH_NTLM,
                 CURLOPT_USERPWD => $username . ':' . $password
             )
         );
+
+        if (null !== $proxy) {
+          $auth['curl'][CURLOPT_HTTPPROXYTUNNEL] = true;
+          $auth['curl'][CURLOPT_PROXYAUTH] = CURLAUTH_BASIC;
+          $auth['curl'][CURLOPT_PROXYTYPE] = CURLPROXY_HTTP;
+          $auth['curl'][CURLOPT_PROXY] = $proxy['proxy_host'];
+          $auth['curl'][CURLOPT_PROXYPORT] = $proxy['proxy_port'];
+          $auth['curl'][CURLOPT_PROXYUSERPWD] = $proxy['proxy_user'] . ':' . $proxy['proxy_pass'];
+        }
+        return $auth;
     }
 
     public static function fromCallbackToken($token)
