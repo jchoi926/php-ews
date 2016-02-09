@@ -12,6 +12,8 @@ namespace jamesiarmes\PEWS\API\Type;
  * @method EmailAddressType setName(string $name)
  * @method string getEmailAddress()
  * @method EmailAddressType setEmailAddress(string $emailAddress)
+ * @method EmailAddressType setAddress(string $email_address)
+ * @method EmailAddressType getAddress(string $email_address)
  * @method string getRoutingType()
  * @method EmailAddressType setRoutingType(string $routingType)
  * @method string getMailboxType()
@@ -26,6 +28,11 @@ class EmailAddressType extends BaseEmailAddressType
      * @var string
      */
     protected $name = null;
+
+    /**
+     * @var string
+     */
+    protected $address = null;
 
     /**
      * @var string
